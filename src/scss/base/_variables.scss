@@ -1,0 +1,47 @@
+//
+// CSS Variables
+//
+
+// CSS Variables
+:root {
+  --color-primary-dark: #e5075d;
+  --color-primary-light: #ff9bc2;
+  --color-grey-dark: #777777;
+  --color-grey-light: #e6e6e6;
+}
+
+//
+// Sass Variables
+//
+
+// Colours
+$white: #fff;
+$off-white: #fefefe;
+$off-black: #212121;
+$black: #303030;
+$card-border-color: #e1e4e6;
+$site-background-color: #ececec;
+$color-primary-dark: var(--color-primary-dark);
+$color-primary-light: var(--color-primary-light);
+$color-grey-dark:  var(--color-grey-dark);
+$color-grey-light:  var(--color-grey-light);
+$primary-accent: #e5075d;
+
+// Fonts
+$bodyfont-size: 10px;
+$bodyfont-weight: normal;
+$bodycolor: $off-black;
+$default-font-size: 1.6rem;
+
+$main-heading-color: $white;
+$heading-color: $off-black;
+$header-bg-color: $off-black;
+
+// Layout
+$main-container-width: 1200px;
+$header-height: 60px;
+
+// Breakpoints
+$tablet-breakpoint: 1199px;
+$mobile-breakpoint: 767px;
+$small-mobile-breakpoint: 450px;
