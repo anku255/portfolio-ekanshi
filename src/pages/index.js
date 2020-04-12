@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image';
 import SocialButtons from '../components/SocialButtons';
+import ArrowLink from '../components/ArrowLink';
 
 const IndexPage = (props) => {
   const heroImage = props.data.file.childImageSharp.fluid;
@@ -28,6 +29,7 @@ const IndexPage = (props) => {
             </div>
         </section>
         <SocialButtons vertical />
+        <ArrowLink position="right" to="sketches" label="sketches" />
       </div>
     </Layout>
   )

@@ -1,0 +1,18 @@
+.arrow-link {
+  position: fixed;
+  top: calc(100vh / 2);
+  transform: translate(0, -50%);
+
+  &--left {
+   left: 3.2rem
+  }
+  &--right {
+   right: 3.2rem
+  }
+
+  svg {
+    width: 5rem;
+    height: 5rem;
+    fill: #282B3A;
+  }
+}
