@@ -37,6 +37,8 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
+    "gatsby-plugin-sharp": "^2.5.4",
+    "gatsby-transformer-sharp": "^2.4.4",
     "node-sass": "^4.11.0",
     "prettier": "^1.15.2"
   },

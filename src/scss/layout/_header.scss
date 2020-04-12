@@ -152,12 +152,7 @@
 // Navigation for smaller screen
 
 .navigation-sm {
-  display: none;
-
-  @include media_query($tablet-breakpoint) {
-    display: block;
-  }
-
+  display: block;
   &__list {
     margin: 0;
   }
@@ -201,7 +196,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1500;
+    z-index: -1;
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
@@ -267,6 +262,7 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+    z-index: 1500;
   }
 
   //ICON

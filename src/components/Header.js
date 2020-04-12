@@ -2,14 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 import { FaHome, FaPencilAlt, FaUser } from 'react-icons/fa'
 
-const ListItemSm = props => (
-  <li>
-    <Link activeClassName="active" to={props.to}>
-      {props.children}
-    </Link>
-  </li>
-)
-
 const ListItemLg = props => (
   <li className="navigation-sm__item">
     <Link
@@ -20,22 +12,6 @@ const ListItemLg = props => (
       {props.children}
     </Link>
   </li>
-)
-
-const NavigationLarge = () => (
-  <nav className="navigation-lg">
-    <ul className="nav-list">
-      <ListItemSm to="/">
-        <FaHome className="nav-icon" /> Home
-      </ListItemSm>
-      <ListItemSm to="/sketches/">
-        <FaPencilAlt className="nav-icon" /> Sketches
-      </ListItemSm>
-      <ListItemSm to="/about/">
-        <FaUser className="nav-icon" /> About Me
-      </ListItemSm>
-    </ul>
-  </nav>
 )
 
 const NavigationSmall = () => (
@@ -76,28 +52,8 @@ const NavigationSmall = () => (
   </div>
 )
 
-const MainLogo = () => (
-  <div className="header__main-logo">
-    <Link to="/">
-      Ekanshi <span className="header__main-logo__lastname">Kiran</span>
-    </Link>
-  </div>
-)
-
 const Header = () => (
-  <>
-    <div className="header">
-      <Link className="header__logo-name" to="/">
-        <div className="diamond" />
-      </Link>
-
-      <div className="header__sub">
-        <MainLogo />
-        <NavigationLarge />
-      </div>
-    </div>
     <NavigationSmall />
-  </>
 )
 
 export default Header

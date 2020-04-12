@@ -1,0 +1,38 @@
+.social-buttons {
+    cursor: pointer;
+    &--vertical {
+      position: fixed;
+      top: calc(100vh / 2);
+      transform: translate(0, -50%);
+      left: 2rem;
+    }
+
+  ul {
+    list-style: none;
+      
+    li {
+      &:not(:last-child) {
+        padding-bottom: 0.5rem;
+      }
+      a {
+        all: unset;
+      }
+      svg {
+        width: 3.2rem;
+        height: 3.2rem;
+        transition: all 0.2s;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+
+  &--horizontal {
+    ul {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

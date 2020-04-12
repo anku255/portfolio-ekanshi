@@ -2,3 +2,65 @@
 // Homepage styling
 //
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+.home-page {
+  padding: 14rem 0;
+  min-height: 100vh;
+  background:$color-primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .section__hero {
+    display: flex;
+    flex: 1;
+
+    .section__image {
+      width: 50%;
+    }
+
+    .section__content {
+      width: 50%;
+
+      .section__title {
+        font-family: 'Merriweather', serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 7.2rem;
+        line-height: 91px;
+        text-align: center;
+        color: #282B3A;
+        margin-bottom: 4rem;
+      }
+
+      .section__about {
+        max-width: 46rem;
+        margin: 0 auto;
+        font-weight: normal;
+
+        p {
+          font-size: 1.8rem;
+          text-align: center;
+          line-height: 22px;
+        }
+      }
+
+    }
+  }
+
+  .social-icons {
+    position: fixed;
+    left: 3.5rem;
+    transform: translateY(-50%);
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+
+    svg {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+}

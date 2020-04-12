@@ -33,7 +33,7 @@ const Layout = ({ children }) => (
           ]}
         />
         <Header />
-        <div>{children}</div>
+        <main>{children}</main>
       </div>
     )}
   />
