@@ -1,6 +1,23 @@
-.sketches-container {
-  margin-top: $header-height + 10px;
-  text-align: center;
+.projects-container {
+  background: $color-primary-light;
+  padding: 14rem;
+
+  .heading-primary {
+    padding: 0 9rem;
+    margin: 0;
+  }
+
+  p {
+    padding: 0 9rem;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+    margin: 0;
+    font-family: Maison Neue;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 130%;
+  }
 }
 
 .showcase {

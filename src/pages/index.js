@@ -29,7 +29,7 @@ const IndexPage = (props) => {
             </div>
         </section>
         <SocialButtons vertical />
-        <ArrowLink position="right" to="sketches" label="sketches" />
+        <ArrowLink position="right" to="projects" label="Projects" />
       </div>
     </Layout>
   )

@@ -35,11 +35,11 @@ const NavigationSmall = () => (
           </span>
           Home
         </ListItemLg>
-        <ListItemLg to="/sketches/">
+        <ListItemLg to="/projects/">
           <span>
             <FaPencilAlt />
           </span>
-          Sketches
+          Projects
         </ListItemLg>
         <ListItemLg to="/about/">
           <span>

@@ -5,7 +5,7 @@ import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Masonry from 'react-masonry-component'
 
-class Sketches extends Component {
+class Projects extends Component {
   constructor(props) {
     super(props)
   }
@@ -13,15 +13,14 @@ class Sketches extends Component {
   render() {
     const categories = this.props.data.categories.edges
 
-    console.log("categories", categories)
-
     return (
       <Layout>
         <Helmet>
           <title>Projects</title>
         </Helmet>
-        <div className="sketches-container">
+        <div className="projects-container">
           <h1 className="heading-primary">Projects</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem similique nemo et maxime sequi voluptas dolores incidunt maiores eligendi?</p>
     {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
           {
             categories.map(({node: category}) => {
@@ -47,11 +46,11 @@ class Sketches extends Component {
   }
 }
 
-export default Sketches
+export default Projects
 
 export const pageQuery = graphql`
   query {
-    categories: allContentfulCategory(sort: { fields: [createdAt], order: DESC }) {
+    categories: allContentfulCategory(sort: { fields: [createdAt], order: ASC }) {
       totalCount
       edges {
         node {
