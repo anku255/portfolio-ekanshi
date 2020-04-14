@@ -2,9 +2,17 @@
   background: $color-primary-light;
   padding: 14rem 14rem 0 14rem;
 
+  @include media_query($mobile-breakpoint) {
+    padding: 5rem 2rem 0 2rem;
+  }
+
   .heading-primary {
     padding: 0 9rem;
     margin: 0;
+
+    @include media_query($mobile-breakpoint) {
+      padding: 0 2rem;
+    }
   }
 
   p {
@@ -17,6 +25,10 @@
     font-weight: 300;
     font-size: 1.6rem;
     line-height: 130%;
+  
+    @include media_query($mobile-breakpoint) {
+      padding: 2rem;
+    }
   }
 }
 
@@ -46,20 +58,18 @@
     }
 
     @include media_query(950px) {
-      width: 50%;
+      width: 50% !important;
       padding-left: 1rem;
     }
 
     @include media_query($small-mobile-breakpoint) {
-      width: 100%;
+      width: 100% !important;
       padding-left: 0.5rem;
     }
 
     &:hover .showcase__title__wrap {
       opacity: 1;
     }
-
-
   }
 
   &__title__wrap {

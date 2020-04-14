@@ -1,5 +1,11 @@
 .social-buttons {
     cursor: pointer;
+    @include media_query($mobile-breakpoint) {
+
+      &--vertical {
+        display: none;
+      }
+    }
     &--vertical {
       position: fixed;
       top: calc(100vh / 2);

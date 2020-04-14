@@ -12,16 +12,32 @@
   align-items: center;
   justify-content: center;
 
+  @include media_query($mobile-breakpoint) {
+    padding: 5rem 2rem;
+  }
+
   .section__hero {
     display: flex;
     flex: 1;
 
+    @include media_query($mobile-breakpoint) {
+     flex-wrap: wrap;
+    }
+
     .section__image {
       width: 50%;
+
+      @include media_query($mobile-breakpoint) {
+        width: 100%;
+      }
     }
 
     .section__content {
       width: 50%;
+
+      @include media_query($mobile-breakpoint) {
+        width: 100%;
+      }
 
       .section__title {
         font-family: 'Merriweather', serif;
@@ -32,6 +48,11 @@
         text-align: center;
         color: #282B3A;
         margin-bottom: 4rem;
+
+        @include media_query($mobile-breakpoint) {
+          font-size: 4.2rem;
+          margin-bottom: 1rem;
+        }
       }
 
       .section__about {
