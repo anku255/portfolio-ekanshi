@@ -1,0 +1,7 @@
+.footer {
+  padding: 5rem 0;
+
+  @include media_query($mobile-breakpoint) {
+    padding: 2.5rem 0;
+  }
+}

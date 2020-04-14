@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import Masonry from 'react-masonry-component';
 import Layout from '../components/Layout';
 import ArrowLink from '../components/ArrowLink';
+import Footer from '../components/Footer';
 
 const getItemWidth = columns => {
   switch (columns) {
@@ -55,9 +56,10 @@ class Projects extends Component {
                 ))}
             </Masonry>
           ))}
+          <ArrowLink position="left" to="/" label="Home" />
+          <ArrowLink position="right" to="about" label="About" />
+          <Footer />
         </div>
-        <ArrowLink position="left" to="/" label="Home" />
-        <ArrowLink position="right" to="about" label="About" />
       </Layout>
     );
   }
