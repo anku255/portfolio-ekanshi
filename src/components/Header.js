@@ -1,26 +1,18 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import { FaHome, FaPencilAlt, FaUser } from 'react-icons/fa'
+import React from 'react';
+import Link from 'gatsby-link';
+import { FaHome, FaPencilAlt, FaUser } from 'react-icons/fa';
 
 const ListItemLg = props => (
   <li className="navigation-sm__item">
-    <Link
-      className="navigation-sm__link"
-      activeClassName="active"
-      to={props.to}
-    >
+    <Link className="navigation-sm__link" activeClassName="active" to={props.to}>
       {props.children}
     </Link>
   </li>
-)
+);
 
 const NavigationSmall = () => (
   <div className="navigation-sm">
-    <input
-      type="checkbox"
-      className="navigation-sm__checkbox"
-      id="navi-toggle"
-    />
+    <input type="checkbox" className="navigation-sm__checkbox" id="navi-toggle" />
     <label htmlFor="navi-toggle" className="navigation-sm__button">
       <span className="navigation-sm__icon">&nbsp;</span>
     </label>
@@ -41,19 +33,17 @@ const NavigationSmall = () => (
           </span>
           Projects
         </ListItemLg>
-        <ListItemLg to="/about/">
+        <ListItemLg to="/contact/">
           <span>
             <FaUser />
           </span>
-          About Me
+          Contact
         </ListItemLg>
       </ul>
     </nav>
   </div>
-)
+);
 
-const Header = () => (
-    <NavigationSmall />
-)
+const Header = () => <NavigationSmall />;
 
-export default Header
+export default Header;

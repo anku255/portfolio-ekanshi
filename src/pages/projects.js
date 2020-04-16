@@ -32,7 +32,7 @@ const ProjectCardTitle = styled.div`
   top: 0;
   left: 0;
   opacity: 0;
-  color: ${props => props.titleColor || props.theme.clrs.fontColor};
+  color: ${props => props.titleColor || props.theme.clrs.cFontDark};
 
   div {
     font-family: Merriweather;
@@ -120,7 +120,7 @@ const Projects = props => {
           </Masonry>
         ))}
         <ArrowLink position="left" to="/" label="Home" />
-        <ArrowLink position="right" to="about" label="About" />
+        <ArrowLink position="right" to="contact" label="Contact" />
         <Footer />
       </div>
     </Layout>

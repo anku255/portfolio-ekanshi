@@ -1,5 +1,8 @@
 const clrs = {
-  fontColor: '#252836',
+  cPrimaryDark: '#0F8F98',
+  cPrimaryLight: '#B3E5E1',
+  cFontDark: '#252836',
+  cWhite: '#fff',
 };
 
 const size = {
