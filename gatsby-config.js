@@ -1,6 +1,6 @@
 require('dotenv').config({
   path: `.env`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -27,6 +27,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-transition-link',
       options: {
@@ -45,6 +46,7 @@ module.exports = {
         // icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
+
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -58,4 +60,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};

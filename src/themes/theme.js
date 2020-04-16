@@ -1,14 +1,21 @@
-export const theme = {
-  pink: { primaryDark: '#e5075d', primaryLight: '#ff9bc2' },
-  grey: { primaryDark: '#777777', primaryLight: '#e6e6e6' },
-}
+const clrs = {
+  fontColor: '#252836',
+};
 
-export const updateTheme = theme => {
-  // update theme only in browser env
-  if (typeof window !== `undefined`) {
-    const html = document.getElementsByTagName('html')[0]
-    const { primaryDark, primaryLight } = theme
-    html.style.setProperty('--color-primary-dark', primaryDark)
-    html.style.setProperty('--color-primary-light', primaryLight)
-  }
-}
+const size = {
+  tablet: '1199px',
+  mobile: '767px',
+  mobileSmall: '450px',
+};
+
+const device = {
+  tablet: `screen and (max-width: ${size.tablet})`,
+  mobile: `screen and (max-width: ${size.mobile})`,
+  mobileSmall: `screen and (max-width: ${size.mobileSmall})`,
+};
+
+export default {
+  clrs,
+  size,
+  device,
+};

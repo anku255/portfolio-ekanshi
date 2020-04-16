@@ -1,0 +1,18 @@
+.contact-page {
+  background: $color-primary-light;
+  padding: 14rem 14rem 0 14rem;
+  min-height: 100vh;
+
+  @include media_query($mobile-breakpoint) {
+    padding: 5rem 2rem 0 2rem;
+  }
+
+  .heading-primary {
+    padding: 0 9rem;
+    margin: 0;
+
+    @include media_query($mobile-breakpoint) {
+      padding: 0 2rem;
+    }
+  }
+}
