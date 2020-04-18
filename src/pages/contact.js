@@ -194,7 +194,7 @@ const Contact = () => (
 
         <FormSection>
           <Title>Contact Me</Title>
-          <form name="contact" method="POST" action="/success" data-netlify="true">
+          <form name="contact" method="POST" data-netlify="true">
             <div style={{ display: 'flex' }}>
               <InputField width="40%" mr="2rem">
                 <label htmlFor="name">Name</label>
