@@ -53,8 +53,8 @@ const Name = styled.div`
 
 const Info = styled.div`
   max-width: 28rem;
+  margin-bottom: 7.3rem;
   p {
-    margin-bottom: 14rem;
     font-family: Lato;
     font-weight: normal;
     font-size: 1.4rem;
@@ -64,7 +64,7 @@ const Info = styled.div`
 `;
 
 const ResumeButton = styled.button`
-  margin-bottom: 6.8rem;
+  margin-bottom: 4.8rem;
   width: 100%;
   height: 5.6rem;
   border: 2px solid ${props => props.theme.clrs.cWhite};
@@ -84,7 +84,7 @@ const ResumeButton = styled.button`
 `;
 
 const FormSection = styled.section`
-  padding: 18rem 12.5rem 0 12.5rem;
+  padding: 14rem 12.5rem 0 12.5rem;
   flex: 1;
 `;
 
