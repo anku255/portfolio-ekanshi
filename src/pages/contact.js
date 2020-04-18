@@ -4,29 +4,34 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import ArrowLink from '../components/ArrowLink';
-import Footer from '../components/Footer';
+import SocialButtons from '../components/SocialButtons';
 
 const ContactPage = styled.div`
   background: ${props => props.theme.clrs.cPrimaryLight};
-  padding: 14rem 14rem 0 14rem;
   min-height: 100vh;
 `;
 
 const Container = styled.div`
   display: flex;
+  min-height: 100vh;
 `;
 
 const AboutMeSection = styled.section`
-  width: 50%;
+  margin-left: 15rem;
+  padding: 8rem 3.2rem;
+  width: 41rem;
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   align-items: center;
+  background: ${props => props.theme.clrs.cFontDark};
+  color: ${props => props.theme.clrs.cWhite};
 `;
 
 const ProfileImage = styled.div`
   width: 14.4rem;
   height: 14.4rem;
-  margin-bottom: 3.6rem;
+  margin-bottom: 4rem;
 
   img {
     width: 100%;
@@ -37,60 +42,58 @@ const ProfileImage = styled.div`
 `;
 
 const Name = styled.div`
-  margin-bottom: 3.6rem;
+  margin-bottom: 4rem;
   font-family: Merriweather;
   font-style: italic;
   font-weight: 300;
   font-size: 3.6rem;
   line-height: 45px;
   text-align: center;
-  color: ${props => props.theme.clrs.cFontDark};
 `;
 
 const Info = styled.div`
-  max-width: 36rem;
+  max-width: 28rem;
   p {
-    margin-bottom: 3.6rem;
+    margin-bottom: 14rem;
     font-family: Lato;
     font-weight: normal;
-    font-size: 1.8rem;
-    line-height: 22px;
+    font-size: 1.4rem;
+    line-height: 17px;
     text-align: center;
   }
 `;
 
 const ResumeButton = styled.button`
+  margin-bottom: 6.8rem;
   width: 100%;
   height: 5.6rem;
-  border: 2px solid ${props => props.theme.clrs.cPrimaryDark};
+  border: 2px solid ${props => props.theme.clrs.cWhite};
   box-sizing: border-box;
   border-radius: 4px;
   text-transform: uppercase;
-  background: ${props => props.theme.clrs.cPrimaryLight};
-  color: ${props => props.theme.clrs.cPrimaryDark};
+  background: ${props => props.theme.clrs.cFontDark};
+  color: ${props => props.theme.clrs.cWhite};
   font-family: Lato;
   font-size: 2.4rem;
   line-height: 29px;
   cursor: pointer;
 
   &:hover {
-    background: ${props => props.theme.clrs.cPrimaryDark};
-    color: ${props => props.theme.clrs.cWhite};
+    background: rgba(179, 229, 225, 0.5);
   }
 `;
 
 const FormSection = styled.section`
-  padding-top: 3rem;
-  width: 50%;
+  padding: 18rem 12.5rem 0 12.5rem;
+  flex: 1;
 `;
 
 const Title = styled.h1`
   margin-bottom: 2rem;
-  font-family: Merriweather;
   font-style: italic;
   font-weight: 300;
-  font-size: 7.2rem;
-  line-height: 91px;
+  font-size: 3.6rem;
+  line-height: 45px;
   color: ${props => props.theme.clrs.cFontDark};
 `;
 
@@ -109,16 +112,20 @@ const InputField = styled.div`
     width: 100%;
     height: 5.6rem;
     font-family: Lato;
-    font-size: 2.4rem;
-    line-height: 29px;
-    color: rgba(40, 43, 58, 0.5);
+    font-size: 14px;
+    line-height: 17px;
+    color: ${props => props.theme.clrs.cFontDark};
+
+    &:focus {
+      border: 2px solid ${props => props.theme.clrs.cPrimaryDark};
+      outline: none;
+    }
   }
 `;
 
 const TextAreaField = styled.div`
   width: 100%;
   margin-top: 2.4rem;
-  background: ${props => props.theme.clrs.cWhite};
   border-radius: 4px;
 
   label {
@@ -130,10 +137,16 @@ const TextAreaField = styled.div`
     width: 100%;
     height: 16rem;
     font-family: Lato;
-    font-size: 2.4rem;
-    line-height: 29px;
-    color: rgba(40, 43, 58, 0.5);
+    font-size: 14px;
+    line-height: 17px;
+    color: ${props => props.theme.clrs.cFontDark};
     border: none;
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border: 2px solid ${props => props.theme.clrs.cPrimaryDark};
+    }
   }
 `;
 
@@ -145,19 +158,19 @@ const SubmitButtonContainer = styled.div`
 
 const SendButton = styled(ResumeButton)`
   width: 25.6rem;
+  border: none;
   background: ${props => props.theme.clrs.cPrimaryDark};
   color: ${props => props.theme.clrs.cWhite};
 
   &:hover {
-    background: ${props => props.theme.clrs.cPrimaryLight};
-    color: ${props => props.theme.clrs.cPrimaryDark};
+    background: linear-gradient(0deg, rgba(40, 43, 58, 0.5), rgba(40, 43, 58, 0.5)), #128a93;
   }
 `;
 
 const Contact = () => (
   <Layout>
     <Helmet>
-      <title>Contact</title>
+      <title>Contact | Ekanshi Kiran</title>
     </Helmet>
     <ContactPage>
       <Container>
@@ -174,14 +187,15 @@ const Contact = () => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames a egestas quis vel ornare. Fames a egestas
               quis vel ornare.
             </p>
-            <ResumeButton>Resume</ResumeButton>
           </Info>
+          <ResumeButton>Resume</ResumeButton>
+          <SocialButtons horizontal />
         </AboutMeSection>
 
         <FormSection>
-          <Title>Contact</Title>
+          <Title>Contact Me</Title>
           <form method="POST" action="/pages/success" data-netlify="true">
-            <Container>
+            <div style={{ display: 'flex' }}>
               <InputField width="40%" mr="2rem">
                 <label htmlFor="name">Name</label>
                 <input id="name" name="name" type="text" placeholder="Name" required />
@@ -190,7 +204,7 @@ const Contact = () => (
                 <label htmlFor="email">Email</label>
                 <input id="email" name="email" type="email" placeholder="Email" required />
               </InputField>
-            </Container>
+            </div>
             <TextAreaField>
               <label htmlFor="message">Message</label>
               <textarea id="message" name="message" placeholder="Say ‘Hi’ here..." required />
@@ -203,7 +217,6 @@ const Contact = () => (
       </Container>
       <ArrowLink position="left" to="/projects" label="Projects" />
       <ArrowLink position="right" to="/" label="Home" />
-      <Footer />
     </ContactPage>
   </Layout>
 );
