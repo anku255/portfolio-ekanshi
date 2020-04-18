@@ -194,7 +194,7 @@ const Contact = () => (
 
         <FormSection>
           <Title>Contact Me</Title>
-          <form method="POST" action="/success" data-netlify="true">
+          <form name="contact" method="POST" action="/success" data-netlify="true">
             <div style={{ display: 'flex' }}>
               <InputField width="40%" mr="2rem">
                 <label htmlFor="name">Name</label>
@@ -209,6 +209,8 @@ const Contact = () => (
               <label htmlFor="message">Message</label>
               <textarea id="message" name="message" placeholder="Say ‘Hi’ here..." required />
             </TextAreaField>
+            {/* For Netlify forms to work, this hidden input is needed */}
+            <input type="hidden" name="contact-form" value="contact" />
             <SubmitButtonContainer>
               <SendButton type="submit">Submit</SendButton>
             </SubmitButtonContainer>
