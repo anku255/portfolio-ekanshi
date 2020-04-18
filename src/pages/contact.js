@@ -180,23 +180,25 @@ const Contact = () => (
 
         <FormSection>
           <Title>Contact</Title>
-          <Container>
-            <InputField width="40%" mr="2rem">
-              <label htmlFor="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Name" />
-            </InputField>
-            <InputField width="60%">
-              <label htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="Email" />
-            </InputField>
-          </Container>
-          <TextAreaField>
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" placeholder="Say ‘Hi’ here..." />
-          </TextAreaField>
-          <SubmitButtonContainer>
-            <SendButton>Submit</SendButton>
-          </SubmitButtonContainer>
+          <form method="POST" action="/pages/success" data-netlify="true">
+            <Container>
+              <InputField width="40%" mr="2rem">
+                <label htmlFor="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Name" required />
+              </InputField>
+              <InputField width="60%">
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Email" required />
+              </InputField>
+            </Container>
+            <TextAreaField>
+              <label htmlFor="message">Message</label>
+              <textarea id="message" name="message" placeholder="Say ‘Hi’ here..." required />
+            </TextAreaField>
+            <SubmitButtonContainer>
+              <SendButton type="submit">Submit</SendButton>
+            </SubmitButtonContainer>
+          </form>
         </FormSection>
       </Container>
       <ArrowLink position="left" to="/projects" label="Projects" />
