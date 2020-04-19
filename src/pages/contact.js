@@ -89,6 +89,7 @@ const FormSection = styled.section`
 `;
 
 const Title = styled.h1`
+  font-family: Merriweather;
   margin-bottom: 2rem;
   font-style: italic;
   font-weight: 300;
