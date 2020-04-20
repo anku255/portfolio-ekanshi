@@ -58,7 +58,7 @@ const Info = styled.div`
     font-family: Lato;
     font-weight: normal;
     font-size: 1.4rem;
-    line-height: 17px;
+    line-height: 22px;
     text-align: center;
   }
 `;
@@ -116,6 +116,8 @@ const InputField = styled.div`
     font-size: 14px;
     line-height: 17px;
     color: ${props => props.theme.clrs.cFontDark};
+    border: 2px solid ${props => props.theme.clrs.cWhite};
+    border-radius: 4px;
 
     &:focus {
       border: 2px solid ${props => props.theme.clrs.cPrimaryDark};
@@ -141,6 +143,7 @@ const TextAreaField = styled.div`
     font-size: 14px;
     line-height: 17px;
     color: ${props => props.theme.clrs.cFontDark};
+    border-radius: 4px;
     border: none;
     resize: none;
 
@@ -160,7 +163,7 @@ const SubmitButtonContainer = styled.div`
 const SendButton = styled(ResumeButton)`
   width: 25.6rem;
   border: none;
-  background: ${props => props.theme.clrs.cPrimaryDark};
+  background: ${props => props.theme.clrs.cSecondary};
   color: ${props => props.theme.clrs.cWhite};
 
   &:hover {

@@ -3,6 +3,7 @@ const clrs = {
   cPrimaryLight: '#B3E5E1',
   cFontDark: '#252836',
   cWhite: '#fff',
+  cSecondary: '#2FCCD7',
 };
 
 const size = {
