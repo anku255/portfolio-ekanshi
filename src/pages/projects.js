@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled, { css } from 'styled-components';
 
@@ -8,6 +8,7 @@ import Masonry from 'react-masonry-component';
 import Layout from '../components/Layout';
 import ArrowLink from '../components/ArrowLink';
 import Footer from '../components/Footer';
+import ProjectModal from '../components/ProjectModal';
 
 const getItemWidth = columns => {
   switch (columns) {
@@ -62,6 +63,8 @@ const ProjectCard = styled.div`
   ${props =>
     props.shouldHover &&
     css`
+      cursor: pointer;
+
       &:hover {
         transform: scale(0.95) translateY(-0.5rem);
         filter: brightness(0.8);
@@ -86,6 +89,18 @@ const ProjectCard = styled.div`
 `;
 
 const Projects = props => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [project, setProject] = useState(null);
+
+  const openModal = useCallback(currentProject => {
+    setProject(currentProject);
+    setIsModalOpen(true);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
+
   const categories = props.data.categories.edges;
 
   return (
@@ -100,7 +115,7 @@ const Projects = props => {
           dolores incidunt maiores eligendi?
         </p>
         {categories.map(({ node: category }) => (
-          <Masonry className="showcase">
+          <Masonry key={category.id} className="showcase">
             {category.projects &&
               category.projects.map(project => (
                 <ProjectCard
@@ -109,12 +124,12 @@ const Projects = props => {
                   backgroundColor={category.backgroundColor}
                   shouldHover={!!project.images}
                 >
-                  <Link>
+                  <div role="button" onClick={project.images ? () => openModal(project) : null}>
                     <Img fluid={project.coverImage.fluid} />
                     <ProjectCardTitle titleColor={category.titleColor}>
                       <div>{project.title}</div>
                     </ProjectCardTitle>
-                  </Link>
+                  </div>
                 </ProjectCard>
               ))}
           </Masonry>
@@ -123,6 +138,7 @@ const Projects = props => {
         <ArrowLink position="right" to="contact" label="Contact" />
         <Footer />
       </div>
+      <ProjectModal isOpen={isModalOpen} closeModal={closeModal} modalCloseTimeout={300} project={project} />
     </Layout>
   );
 };
@@ -150,7 +166,7 @@ export const pageQuery = graphql`
               }
             }
             images {
-              fluid(maxWidth: 800) {
+              fluid(maxWidth: 1200) {
                 ...GatsbyContentfulFluid
               }
             }
