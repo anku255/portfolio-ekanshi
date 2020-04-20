@@ -1,0 +1,13 @@
+
+.ReactModal__Overlay {
+  transition: all 500ms ease-in-out;
+  transform: translateY(100%);
+}
+
+.ReactModal__Overlay--after-open{
+  transform: translateY(0);
+}
+
+.ReactModal__Overlay--before-close{
+  transform: translateY(-100%);
+}

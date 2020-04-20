@@ -138,7 +138,7 @@ const Projects = props => {
         <ArrowLink position="right" to="contact" label="Contact" />
         <Footer />
       </div>
-      <ProjectModal isOpen={isModalOpen} closeModal={closeModal} modalCloseTimeout={300} project={project} />
+      <ProjectModal isOpen={isModalOpen} closeModal={closeModal} project={project} />
     </Layout>
   );
 };
