@@ -8,8 +8,11 @@ import ArrowLink from '../components/ArrowLink';
 
 const IndexPage = props => {
   const heroImage = props.data.file.childImageSharp.fluid;
+
+  const resumeUrl = `https:${props.data.contentfulResume.file.file.url}`;
+
   return (
-    <Layout>
+    <Layout resumeUrl={resumeUrl}>
       <div className="home-page">
         <section className="section__hero">
           <div className="section__image">
@@ -48,6 +51,14 @@ export const query = graphql`
         fluid(maxWidth: 500) {
           # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+
+    contentfulResume(name: { eq: "Resume" }) {
+      file {
+        file {
+          url
         }
       }
     }

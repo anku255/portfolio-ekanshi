@@ -103,8 +103,10 @@ const Projects = props => {
 
   const categories = props.data.categories.edges;
 
+  const resumeUrl = `https:${props.data.contentfulResume.file.file.url}`;
+
   return (
-    <Layout>
+    <Layout resumeUrl={resumeUrl}>
       <Helmet>
         <title>Projects</title>
       </Helmet>
@@ -171,6 +173,14 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+
+    contentfulResume(name: { eq: "Resume" }) {
+      file {
+        file {
+          url
         }
       }
     }

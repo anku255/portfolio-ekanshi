@@ -19,7 +19,7 @@ const SITE_QUERY = graphql`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, resumeUrl }) => {
   const data = useStaticQuery(SITE_QUERY);
 
   return (
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
         ]}
       />
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header resumeUrl={resumeUrl} />
         <main>{children}</main>
       </ThemeProvider>
     </div>
@@ -47,6 +47,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.any,
+  resumeUrl: PropTypes.string,
 };
 
 export default Layout;

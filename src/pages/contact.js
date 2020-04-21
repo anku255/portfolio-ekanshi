@@ -2,6 +2,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import ArrowLink from '../components/ArrowLink';
 import SocialButtons from '../components/SocialButtons';
@@ -63,7 +64,7 @@ const Info = styled.div`
   }
 `;
 
-const ResumeButton = styled.button`
+const ResumeButton = styled.a`
   margin-bottom: 4.8rem;
   width: 100%;
   height: 5.6rem;
@@ -77,9 +78,14 @@ const ResumeButton = styled.button`
   font-size: 2.4rem;
   line-height: 29px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 
   &:hover {
     background: rgba(179, 229, 225, 0.5);
+    color: ${props => props.theme.clrs.cWhite};
   }
 `;
 
@@ -171,60 +177,77 @@ const SendButton = styled(ResumeButton)`
   }
 `;
 
-const Contact = () => (
-  <Layout>
-    <Helmet>
-      <title>Contact | Ekanshi Kiran</title>
-    </Helmet>
-    <ContactPage>
-      <Container>
-        <AboutMeSection>
-          <ProfileImage>
-            <img
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80"
-              alt="Ekanshi Kiran"
-            />
-          </ProfileImage>
-          <Name>Ekanshi Kiran</Name>
-          <Info>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames a egestas quis vel ornare. Fames a egestas
-              quis vel ornare.
-            </p>
-          </Info>
-          <ResumeButton>Resume</ResumeButton>
-          <SocialButtons horizontal />
-        </AboutMeSection>
+const Contact = props => {
+  const resumeUrl = `https:${props.data.contentfulResume.file.file.url}`;
+  return (
+    <Layout resumeUrl={resumeUrl}>
+      <Helmet>
+        <title>Contact | Ekanshi Kiran</title>
+      </Helmet>
+      <ContactPage>
+        <Container>
+          <AboutMeSection>
+            <ProfileImage>
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80"
+                alt="Ekanshi Kiran"
+              />
+            </ProfileImage>
+            <Name>Ekanshi Kiran</Name>
+            <Info>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames a egestas quis vel ornare. Fames a
+                egestas quis vel ornare.
+              </p>
+            </Info>
+            <ResumeButton href={resumeUrl} target="_blank" rel="noopener noreferrer">
+              Resume
+            </ResumeButton>
+            <SocialButtons horizontal />
+          </AboutMeSection>
 
-        <FormSection>
-          <Title>Contact Me</Title>
-          <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-            <div style={{ display: 'flex' }}>
-              <InputField width="40%" mr="2rem">
-                <label htmlFor="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Name" required />
-              </InputField>
-              <InputField width="60%">
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="Email" required />
-              </InputField>
-            </div>
-            <TextAreaField>
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" placeholder="Say ‘Hi’ here..." required />
-            </TextAreaField>
-            {/* For Netlify forms to work, this hidden input is needed */}
-            <input type="hidden" name="form-name" value="contact" />
-            <SubmitButtonContainer>
-              <SendButton type="submit">Submit</SendButton>
-            </SubmitButtonContainer>
-          </form>
-        </FormSection>
-      </Container>
-      <ArrowLink position="left" to="/projects" label="Projects" />
-      <ArrowLink position="right" to="/" label="Home" />
-    </ContactPage>
-  </Layout>
-);
+          <FormSection>
+            <Title>Contact Me</Title>
+            <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+              <div style={{ display: 'flex' }}>
+                <InputField width="40%" mr="2rem">
+                  <label htmlFor="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Name" required />
+                </InputField>
+                <InputField width="60%">
+                  <label htmlFor="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="Email" required />
+                </InputField>
+              </div>
+              <TextAreaField>
+                <label htmlFor="message">Message</label>
+                <textarea id="message" name="message" placeholder="Say ‘Hi’ here..." required />
+              </TextAreaField>
+              {/* For Netlify forms to work, this hidden input is needed */}
+              <input type="hidden" name="form-name" value="contact" />
+              <SubmitButtonContainer>
+                <SendButton type="submit">Submit</SendButton>
+              </SubmitButtonContainer>
+            </form>
+          </FormSection>
+        </Container>
+        <ArrowLink position="left" to="/projects" label="Projects" />
+        <ArrowLink position="right" to="/" label="Home" />
+      </ContactPage>
+    </Layout>
+  );
+};
 
 export default Contact;
+
+export const query = graphql`
+  query {
+    contentfulResume(name: { eq: "Resume" }) {
+      file {
+        file {
+          url
+        }
+      }
+    }
+  }
+`;

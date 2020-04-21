@@ -2,15 +2,21 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { FaHome, FaPencilAlt, FaUser } from 'react-icons/fa';
 
-const ListItemLg = props => (
+const ListItem = props => (
   <li className="navigation-sm__item">
-    <Link className="navigation-sm__link" activeClassName="active" to={props.to}>
-      {props.children}
-    </Link>
+    {props.custom ? (
+      <a className="navigation-sm__link" href={props.to} target="_blank" rel="noopener noreferrer">
+        {props.children}
+      </a>
+    ) : (
+      <Link className="navigation-sm__link" activeClassName="active" to={props.to}>
+        {props.children}
+      </Link>
+    )}
   </li>
 );
 
-const NavigationSmall = () => (
+const Header = ({ resumeUrl }) => (
   <div className="navigation-sm">
     <input type="checkbox" className="navigation-sm__checkbox" id="navi-toggle" />
     <label htmlFor="navi-toggle" className="navigation-sm__button">
@@ -21,29 +27,33 @@ const NavigationSmall = () => (
 
     <nav className="navigation-sm__nav">
       <ul className="navigation-sm__list">
-        <ListItemLg to="/">
+        <ListItem to="/">
           <span>
             <FaHome />
           </span>
           Home
-        </ListItemLg>
-        <ListItemLg to="/projects/">
+        </ListItem>
+        <ListItem to="/projects/">
           <span>
             <FaPencilAlt />
           </span>
           Projects
-        </ListItemLg>
-        <ListItemLg to="/contact/">
+        </ListItem>
+        <ListItem to="/contact/">
           <span>
             <FaUser />
           </span>
           Contact
-        </ListItemLg>
+        </ListItem>
+        <ListItem custom to={resumeUrl}>
+          <span>
+            <FaUser />
+          </span>
+          Resume
+        </ListItem>
       </ul>
     </nav>
   </div>
 );
-
-const Header = () => <NavigationSmall />;
 
 export default Header;
