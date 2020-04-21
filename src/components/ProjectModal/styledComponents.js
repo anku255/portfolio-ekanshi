@@ -13,6 +13,7 @@ export const modalStyles = {
     margin: 0,
     padding: 0,
     border: 0,
+    borderRadius: 0,
   },
 };
 
@@ -36,7 +37,7 @@ export const Title = styled.h1`
 export const Detail = styled.p`
   margin-bottom: 2rem;
   font-size: 1.4rem;
-  line-height: 130%;
+  line-height: 22px;
 `;
 
 export const CloseButton = styled.button`

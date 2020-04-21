@@ -24,7 +24,7 @@
     font-style: normal;
     font-weight: 300;
     font-size: 1.6rem;
-    line-height: 130%;
+    line-height: 22px;
   
     @include media_query($mobile-breakpoint) {
       padding: 2rem;

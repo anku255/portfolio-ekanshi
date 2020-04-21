@@ -124,6 +124,7 @@ const InputField = styled.div`
     color: ${props => props.theme.clrs.cFontDark};
     border: 2px solid ${props => props.theme.clrs.cWhite};
     border-radius: 4px;
+    line-height: 22px;
 
     &:focus {
       border: 2px solid ${props => props.theme.clrs.cPrimaryDark};
@@ -150,6 +151,7 @@ const TextAreaField = styled.div`
     line-height: 17px;
     color: ${props => props.theme.clrs.cFontDark};
     border-radius: 4px;
+    line-height: 22px;
     border: none;
     resize: none;
 
