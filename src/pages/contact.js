@@ -179,6 +179,16 @@ const SendButton = styled(ResumeButton)`
   }
 `;
 
+const CloudImage = styled.div`
+  position: absolute;
+  top: 4rem;
+  right: 5rem;
+  background: url('/cloud.png');
+  width: 18rem;
+  height: 15rem;
+  background-size: cover;
+`;
+
 const Contact = props => {
   const resumeUrl = `https:${props.data.contentfulResume.file.file.url}`;
   return (
@@ -187,6 +197,7 @@ const Contact = props => {
         <title>Contact | Ekanshi Kiran</title>
       </Helmet>
       <ContactPage>
+        <CloudImage />
         <Container>
           <AboutMeSection>
             <ProfileImage>
