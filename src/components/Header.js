@@ -1,20 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import { FaHome, FaPencilAlt, FaUser } from 'react-icons/fa';
+import HomeIcon from '../images/svg/home.svg';
+import ResumeIcon from '../images/svg/resume.svg';
+import ContactIcon from '../images/svg/mail.svg';
+import ProjectsIcon from '../images/svg/graphic_tool.svg';
 
-const ListItem = props => (
+const ListItem = ({ custom, children, to }) => (
   <li className="navigation-sm__item">
-    {props.custom ? (
-      <a className="navigation-sm__link" href={props.to} target="_blank" rel="noopener noreferrer">
-        {props.children}
+    {custom ? (
+      <a className="navigation-sm__link" href={to} target="_blank" rel="noopener noreferrer">
+        {children}
       </a>
     ) : (
-      <Link className="navigation-sm__link" activeClassName="active" to={props.to}>
-        {props.children}
+      <Link className="navigation-sm__link" activeClassName="active" to={to}>
+        {children}
       </Link>
     )}
   </li>
 );
+
+ListItem.propTypes = {
+  children: PropTypes.any,
+  custom: PropTypes.bool,
+  to: PropTypes.string,
+};
 
 const Header = ({ resumeUrl }) => (
   <div className="navigation-sm">
@@ -29,25 +39,25 @@ const Header = ({ resumeUrl }) => (
       <ul className="navigation-sm__list">
         <ListItem to="/">
           <span>
-            <FaHome />
+            <HomeIcon />
           </span>
           Home
         </ListItem>
         <ListItem to="/projects/">
           <span>
-            <FaPencilAlt />
+            <ProjectsIcon />
           </span>
           Projects
         </ListItem>
         <ListItem to="/contact/">
           <span>
-            <FaUser />
+            <ContactIcon style={{ transform: 'translateY(4px)' }} />
           </span>
           Contact
         </ListItem>
         <ListItem custom to={resumeUrl}>
           <span>
-            <FaUser />
+            <ResumeIcon />
           </span>
           Resume
         </ListItem>
@@ -55,5 +65,9 @@ const Header = ({ resumeUrl }) => (
     </nav>
   </div>
 );
+
+Header.propTypes = {
+  resumeUrl: PropTypes.string,
+};
 
 export default Header;

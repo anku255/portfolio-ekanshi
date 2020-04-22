@@ -218,7 +218,10 @@
   &__link {
     &:link,
     &:visited {
-      width: 40rem;
+      @media screen and (min-width: $tablet-breakpoint) {
+        width: 40rem;
+      }
+
       display: inline-block;
       font-size: 3rem;
       font-weight: 300;
