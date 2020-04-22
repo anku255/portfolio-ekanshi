@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
@@ -105,6 +106,10 @@ const Projects = props => {
 
   const resumeUrl = `https:${props.data.contentfulResume.file.file.url}`;
 
+  const allProjects = props.data.categories.edges
+    .reduce((acc, curr) => [...acc, ...(curr.node.projects || [])], [])
+    .filter(p => p.images);
+
   return (
     <Layout resumeUrl={resumeUrl}>
       <Helmet>
@@ -140,9 +145,30 @@ const Projects = props => {
         <ArrowLink position="right" to="contact" label="Contact" />
         <Footer />
       </div>
-      <ProjectModal isOpen={isModalOpen} closeModal={closeModal} project={project} />
+      <ProjectModal
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        openModal={openModal}
+        project={project}
+        allProjects={allProjects}
+      />
     </Layout>
   );
+};
+
+Projects.propTypes = {
+  data: PropTypes.shape({
+    categories: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+    contentfulResume: PropTypes.shape({
+      file: PropTypes.shape({
+        file: PropTypes.shape({
+          url: PropTypes.any,
+        }),
+      }),
+    }),
+  }),
 };
 
 export default Projects;

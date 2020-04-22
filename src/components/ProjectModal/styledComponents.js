@@ -79,3 +79,18 @@ export const CloseButton = styled.button`
 export const ImageContainer = styled.div`
   margin-bottom: 5.6rem;
 `;
+
+export const MoreProjects = styled.div`
+  margin-top: 14rem;
+  margin-bottom: 4rem;
+  font-family: Lato;
+  font-size: 3.6rem;
+  line-height: 22px;
+`;
+
+export const ProjectCard = styled.div`
+  width: 34.8rem;
+  height: 34.8rem;
+  padding-right: 2rem;
+  cursor: pointer;
+`;
