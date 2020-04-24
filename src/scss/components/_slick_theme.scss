@@ -222,4 +222,8 @@
     &:before {
         content: url('/arrow.png');
     }
+
+    @include media_query($mobile-breakpoint) {
+       right: -15px;
+    }
 }

@@ -25,6 +25,10 @@ export const StyledModal = styled.div`
   background: ${props => props.theme.clrs.cFontDark};
   color: ${props => props.theme.clrs.cWhite};
   font-family: Lato sans-serif;
+
+  @media ${props => props.theme.device.mobileSmall} {
+    padding: 4rem 3.2rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -33,11 +37,19 @@ export const Title = styled.h1`
   font-size: 2.4rem;
   line-height: 130%;
   color: ${props => props.theme.clrs.cWhite};
+
+  @media ${props => props.theme.device.mobileSmall} {
+    margin-bottom: 1.6rem;
+  }
 `;
 export const Detail = styled.p`
   margin-bottom: 2rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 22px;
+
+  @media ${props => props.theme.device.mobileSmall} {
+    margin-bottom: 2.4rem;
+  }
 `;
 
 export const CloseButton = styled.button`

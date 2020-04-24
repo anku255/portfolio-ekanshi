@@ -85,7 +85,9 @@ const ProjectCard = styled.div`
 
   @media ${props => props.theme.device.mobileSmall} {
     width: 100% !important;
-    padding-left: 0.5rem;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 2.4rem;
   }
 `;
 
