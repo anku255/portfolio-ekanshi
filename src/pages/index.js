@@ -18,6 +18,7 @@ const IndexPage = props => {
         <section className="section__hero">
           <div className="section__image">
             <Img fluid={heroImage} alt="A girl sitting on clouds" />
+            <SocialButtons horizontal />
           </div>
           <div className="section__content">
             <h1 className="section__title">Ekanshi Kiran</h1>

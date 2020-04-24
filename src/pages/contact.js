@@ -20,7 +20,8 @@ const Container = styled.div`
 const AboutMeSection = styled.section`
   margin-left: 15rem;
   padding: 8rem 3.2rem;
-  width: 41rem;
+  width: 27vw;
+  min-width: 35rem;
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
@@ -234,7 +235,7 @@ const Contact = props => {
               </div>
               <TextAreaField>
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" placeholder="Say ‘Hi’ here..." required />
+                <textarea id="message" name="message" placeholder="Message" required />
               </TextAreaField>
               {/* For Netlify forms to work, this hidden input is needed */}
               <input type="hidden" name="form-name" value="contact" />
