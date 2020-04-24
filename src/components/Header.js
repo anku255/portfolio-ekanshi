@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import HomeIcon from '../images/svg/home.svg';
 import ResumeIcon from '../images/svg/resume.svg';
-import ContactIcon from '../images/svg/mail.svg';
+import ContactIcon from '../images/svg/paper-plane.svg';
 import ProjectsIcon from '../images/svg/graphic_tool.svg';
 
 const ListItem = ({ custom, children, to }) => (
@@ -51,7 +51,7 @@ const Header = ({ resumeUrl }) => (
         </ListItem>
         <ListItem to="/contact/">
           <span>
-            <ContactIcon style={{ transform: 'translateY(4px)' }} />
+            <ContactIcon />
           </span>
           Contact
         </ListItem>
