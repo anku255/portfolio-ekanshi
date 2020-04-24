@@ -29,6 +29,7 @@
 
       @include media_query($mobile-breakpoint) {
         width: 100%;
+        order: 1;
       }
     }
 
@@ -50,8 +51,13 @@
         margin-bottom: 4rem;
 
         @include media_query($mobile-breakpoint) {
-          font-size: 4.2rem;
-          margin-bottom: 1rem;
+          font-size: 3.6rem;
+          margin-bottom: 3.2rem;
+          line-height: 45px;
+        }
+
+        @include media_query($small-mobile-breakpoint) {
+          margin-top: 5vh;
         }
       }
 
@@ -60,10 +66,45 @@
         margin: 0 auto;
         font-weight: normal;
 
+        @include media_query($small-mobile-breakpoint) {
+          padding: 0 1.5vh;
+        }
+
         p {
           font-size: 1.8rem;
           text-align: center;
           line-height: 22px;
+
+          @include media_query($mobile-breakpoint) {
+            font-size: 1.6rem;
+            line-height: 25px;
+
+            &:first-child {
+              margin-bottom: 3.2rem;
+            }
+          }
+        }
+      
+      }
+
+      .section__projects {
+        display: none;
+        text-align: center;
+        margin-top: 5.2rem;
+        margin-bottom: 7.2rem;
+        @include media_query($small-mobile-breakpoint) {
+          display: block;
+        }
+
+        a {
+          font-family: Lato;
+          font-weight: 600;
+          font-size: 2.4rem;
+          line-height: 29px;
+          letter-spacing: 0.1em;
+          text-decoration: underline;
+          text-transform: uppercase;
+          color: $cFontDark;
         }
       }
 

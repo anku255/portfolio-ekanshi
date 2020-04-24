@@ -10,6 +10,10 @@ const StyledLink = styled(AniLink)`
   height: 50%;
   transition: transform 0.7s cubic-bezier(0.7, 0, 0.25, 1) 0.25s, opacity 0.2s ease-out 0.75s;
 
+  @media ${props => props.theme.device.mobile} {
+    display: none;
+  }
+
   span {
     display: inline-block;
     color: ${props => props.theme.clrs.cFontDark};

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Link from 'gatsby-link';
 
 import Layout from '../components/Layout';
 import SocialButtons from '../components/SocialButtons';
@@ -22,14 +23,20 @@ const IndexPage = props => {
             <h1 className="section__title">Ekanshi Kiran</h1>
             <div className="section__about">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur cum numquam cumque deleniti
-                recusandae quidem ullam suscipit atque quod! Voluptatibus.
+                Hello there! Thanks for stopping by. I am Ekanshi Kiran, and I am a designer in the making. I have a
+                passion for web designing and love to create for web and mobile devices. I have been exploring areas
+                like graphic designing, product designing and 3D modelling. I have completed my B.Des from National
+                institute of Fashion Technology, Gandhinagar.
               </p>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque nam veniam aliquid praesentium omnis
-                eveniet! Repellat officiis cupiditate, adipisci, omnis harum dolorem deserunt ipsam quo debitis
-                doloribus assumenda optio recusandae.
+                I believe in simplicity and minimalism and my work displays the same. My goals are to focus on
+                wireframing, layouting and conveying the right message to my clients. I have also been experimenting
+                with 3D illustration and new technology like virtual reality, as things can be made better and creative
+                with them.
               </p>
+            </div>
+            <div className="section__projects">
+              <Link to="/projects">Projects</Link>
             </div>
           </div>
         </section>
