@@ -43,7 +43,7 @@ module.exports = {
         background_color: `#B3E5E1`,
         theme_color: `#B3E5E1`,
         display: `minimal-ui`,
-        // icon: `src/images/logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
 
@@ -51,7 +51,7 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `#B3E5E1`,
+        color: `#252836`,
         // Disable the loading spinner.
         showSpinner: false,
       },

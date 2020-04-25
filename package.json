@@ -33,6 +33,9 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.0"
   },
+  "resolutions": {
+    "sharp": "0.24.0"
+  },
   "keywords": [
     "gatsby"
   ],
