@@ -15,6 +15,10 @@ const ContactPage = styled.div`
 const Container = styled.div`
   display: flex;
   min-height: 100vh;
+
+  @media ${props => props.theme.device.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const AboutMeSection = styled.section`
@@ -28,6 +32,12 @@ const AboutMeSection = styled.section`
   align-items: center;
   background: ${props => props.theme.clrs.cFontDark};
   color: ${props => props.theme.clrs.cWhite};
+
+  @media ${props => props.theme.device.mobile} {
+    order: 1; /* should come after form in mobile */
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 const ProfileImage = styled.div`
@@ -63,6 +73,10 @@ const Info = styled.div`
     line-height: 22px;
     text-align: center;
   }
+
+  span.email {
+    text-decoration: underline;
+  }
 `;
 
 const ResumeButton = styled.a`
@@ -93,6 +107,10 @@ const ResumeButton = styled.a`
 const FormSection = styled.section`
   padding: 14rem 12.5rem 0 12.5rem;
   flex: 1;
+
+  @media ${props => props.theme.device.mobile} {
+    padding: 11rem 3.2rem 0 3.2rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -103,6 +121,19 @@ const Title = styled.h1`
   font-size: 3.6rem;
   line-height: 45px;
   color: ${props => props.theme.clrs.cFontDark};
+
+  @media ${props => props.theme.device.mobile} {
+    text-align: center;
+    margin-bottom: 2.8rem;
+  }
+`;
+
+const InputFieldContainer = styled.div`
+  display: flex;
+
+  @media ${props => props.theme.device.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const InputField = styled.div`
@@ -130,6 +161,14 @@ const InputField = styled.div`
     &:focus {
       border: 2px solid ${props => props.theme.clrs.cPrimaryDark};
       outline: none;
+    }
+  }
+
+  @media ${props => props.theme.device.mobile} {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
     }
   }
 `;
@@ -167,6 +206,11 @@ const SubmitButtonContainer = styled.div`
   margin-top: 4rem;
   display: flex;
   justify-content: flex-end;
+
+  @media ${props => props.theme.device.mobile} {
+    margin-top: 7.2rem;
+    justify-content: center;
+  }
 `;
 
 const SendButton = styled(ResumeButton)`
@@ -178,6 +222,11 @@ const SendButton = styled(ResumeButton)`
   &:hover {
     background: linear-gradient(0deg, rgba(40, 43, 58, 0.5), rgba(40, 43, 58, 0.5)), #128a93;
   }
+
+  @media ${props => props.theme.device.mobile} {
+    width: 100%;
+    margin-bottom: 9.2rem;
+  }
 `;
 
 const CloudImage = styled.div`
@@ -188,6 +237,10 @@ const CloudImage = styled.div`
   width: 18rem;
   height: 15rem;
   background-size: cover;
+
+  @media ${props => props.theme.device.mobile} {
+    display: none;
+  }
 `;
 
 const Contact = props => {
@@ -210,8 +263,8 @@ const Contact = props => {
             <Name>Ekanshi Kiran</Name>
             <Info>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames a egestas quis vel ornare. Fames a
-                egestas quis vel ornare.
+                If you have any questions about design service, or just want to say hello, feel free to contact me. You
+                can also email me at <span className="email">ekanshi.design@gmail.com</span>
               </p>
             </Info>
             <ResumeButton href={resumeUrl} target="_blank" rel="noopener noreferrer">
@@ -223,7 +276,7 @@ const Contact = props => {
           <FormSection>
             <Title>Contact Me</Title>
             <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-              <div style={{ display: 'flex' }}>
+              <InputFieldContainer>
                 <InputField width="40%" mr="2rem">
                   <label htmlFor="name">Name</label>
                   <input id="name" name="name" type="text" placeholder="Name" required />
@@ -232,7 +285,7 @@ const Contact = props => {
                   <label htmlFor="email">Email</label>
                   <input id="email" name="email" type="email" placeholder="Email" required />
                 </InputField>
-              </div>
+              </InputFieldContainer>
               <TextAreaField>
                 <label htmlFor="message">Message</label>
                 <textarea id="message" name="message" placeholder="Message" required />
@@ -240,7 +293,7 @@ const Contact = props => {
               {/* For Netlify forms to work, this hidden input is needed */}
               <input type="hidden" name="form-name" value="contact" />
               <SubmitButtonContainer>
-                <SendButton type="submit">Submit</SendButton>
+                <SendButton type="submit">Send</SendButton>
               </SubmitButtonContainer>
             </form>
           </FormSection>
