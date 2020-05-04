@@ -34,6 +34,10 @@
       @include media_query($mobile-breakpoint) {
         width: 100%;
         order: 1;
+
+        img {
+          transform: translateX(-2rem); // shift the image to left on mobile screen
+        }
       }
     }
 
