@@ -24,7 +24,7 @@ export const StyledModal = styled.div`
   padding: 4rem 14rem;
   background: ${props => props.theme.clrs.cFontDark};
   color: ${props => props.theme.clrs.cWhite};
-  font-family: Lato sans-serif;
+  font-family: 'Lato' sans-serif;
 
   @media ${props => props.theme.device.mobileSmall} {
     padding: 4rem 3.2rem;

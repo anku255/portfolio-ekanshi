@@ -26,7 +26,7 @@ const StyledLink = styled(AniLink)`
     opacity: 0;
     font-size: 1.8rem;
     line-height: 1.7em;
-    font-family: Lato sans-serif;
+    font-family: 'Lato' sans-serif;
     transition: opacity 0.1s ease 0.125s, transform 0.3s cubic-bezier(0, 0, 0, 1) 0.125s;
   }
 

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -94,6 +94,23 @@ const ProjectCard = styled.div`
 const Projects = props => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [project, setProject] = useState(null);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    const updatedCategories = props.data.categories.edges.map(({ node: category }) => {
+      const titleProject = category.projects.find(p => !p.images);
+      // filter out the title project and insert it at the begining on small screen
+      const updatedProjects =
+        vw <= 450 ? [titleProject, ...category.projects.filter(p => p.images)] : category.projects;
+      return {
+        ...category,
+        projects: updatedProjects,
+      };
+    });
+    setCategories(updatedCategories);
+  }, [props.data]);
 
   const openModal = useCallback(currentProject => {
     setProject(currentProject);
@@ -103,8 +120,6 @@ const Projects = props => {
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
   }, []);
-
-  const categories = props.data.categories.edges;
 
   const resumeUrl = `https:${props.data.contentfulResume.file.file.url}`;
 
@@ -123,7 +138,7 @@ const Projects = props => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem similique nemo et maxime sequi voluptas
           dolores incidunt maiores eligendi?
         </p>
-        {categories.map(({ node: category }) => (
+        {categories.map(category => (
           <Masonry key={category.id} className="showcase">
             {category.projects &&
               category.projects.map(project => (
