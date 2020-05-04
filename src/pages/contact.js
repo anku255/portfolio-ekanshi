@@ -74,8 +74,13 @@ const Info = styled.div`
     text-align: center;
   }
 
-  span.email {
+  a.email {
     text-decoration: underline;
+    color: ${props => props.theme.clrs.cWhite};
+
+    &:hover {
+      color: ${props => props.theme.clrs.cWhite};
+    }
   }
 `;
 
@@ -264,7 +269,10 @@ const Contact = props => {
             <Info>
               <p>
                 If you have any questions about design service, or just want to say hello, feel free to contact me. You
-                can also email me at <span className="email">ekanshi.design@gmail.com</span>
+                can also email me at{' '}
+                <a href="mailto:ekanshi.design@gmail.com" className="email">
+                  ekanshi.design@gmail.com
+                </a>
               </p>
             </Info>
             <ResumeButton href={resumeUrl} target="_blank" rel="noopener noreferrer">
