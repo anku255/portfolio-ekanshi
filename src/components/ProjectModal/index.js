@@ -58,10 +58,7 @@ const ProjectModal = ({ isOpen, closeModal, project, openModal, allProjects }) =
         {project ? (
           <>
             <Title>{project.title}</Title>
-            <Detail>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ipsum? Beatae quasi facilis maiores
-              non in, tenetur consectetur consequuntur libero.
-            </Detail>
+            <Detail>{project.description && project.description.content[0].content[0].value} </Detail>
             {project.images.map(img => (
               <ImageContainer key={img.fluid.src}>
                 <Img fluid={img.fluid} />

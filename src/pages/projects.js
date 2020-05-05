@@ -135,8 +135,8 @@ const Projects = props => {
       <div className="projects-container">
         <h1 className="heading-primary">Projects</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem similique nemo et maxime sequi voluptas
-          dolores incidunt maiores eligendi?
+          “It’s through mistakes that you actually can grow. You have to get bad in order to get good.” -Paula Scher,
+          Graphic designer & Painter
         </p>
         {categories.map(category => (
           <Masonry key={category.id} className="showcase">
@@ -204,6 +204,13 @@ export const pageQuery = graphql`
             id
             slug
             title
+            description {
+              content {
+                content {
+                  value
+                }
+              }
+            }
             columns
             coverImage {
               fluid(maxWidth: 800) {

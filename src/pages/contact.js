@@ -261,7 +261,7 @@ const Contact = props => {
           <AboutMeSection>
             <ProfileImage>
               <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80"
+                src="https://images.ctfassets.net/nfgn014j96su/3MA1LkGCaTvkx0Z3n2IobY/5e9bad08d4417f58e4f701df60b4a015/pic.PNG"
                 alt="Ekanshi Kiran"
               />
             </ProfileImage>
